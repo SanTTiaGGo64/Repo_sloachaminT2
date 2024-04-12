@@ -6,7 +6,6 @@ namespace sloachaminT2
         public MainPage()
         {
             InitializeComponent();
-            limpiar();
         }
 
         private void btnCalcular_Clicked(object sender, EventArgs e)
@@ -19,10 +18,14 @@ namespace sloachaminT2
                 {
                     DisplayAlert("AVISO", "Debe seleccionar un alumno.", "ok");
                 }
-                else if (txtNotaSeguimiento.Text == string.Empty || txtExamen.Text == string.Empty || txtNotaSeguimiento2.Text == string.Empty || txtExamen2.Text == string.Empty)
+                else if (string.IsNullOrEmpty(txtNotaSeguimiento.Text) || string.IsNullOrEmpty(txtExamen.Text) || string.IsNullOrEmpty(txtNotaSeguimiento2.Text) || string.IsNullOrEmpty(txtExamen2.Text))
                 {
                     DisplayAlert("AVISO", "Un campo de notas se encuentra vacio.", "ok");
                 }
+                //else if (txtNotaSeguimiento.Text == string.Empty || txtExamen.Text == string.Empty || txtNotaSeguimiento2.Text == string.Empty || txtExamen2.Text == string.Empty)
+                //{
+                //    DisplayAlert("AVISO", "Un campo de notas se encuentra vacio.", "ok");
+                //}
                 else if (Convert.ToDecimal(txtNotaSeguimiento.Text) < 0 || Convert.ToDecimal(txtExamen.Text) < 0 || Convert.ToDecimal(txtNotaSeguimiento2.Text) < 0 || Convert.ToDecimal(txtExamen2.Text) < 0)
                 {
                     DisplayAlert("AVISO", "Valores no pueden ser negativos.", "ok");
@@ -108,10 +111,10 @@ namespace sloachaminT2
         {
             dpFechaRegistro.Date = DateTime.Today;
             pckEstudiantes.SelectedIndex = -1;
-            txtNotaSeguimiento.Text = "0";
-            txtExamen.Text = "0";
-            txtNotaSeguimiento2.Text = "0";
-            txtExamen2.Text = "0";
+            txtNotaSeguimiento.Text = string.Empty;
+            txtExamen.Text = string.Empty;
+            txtNotaSeguimiento2.Text = string.Empty;
+            txtExamen2.Text = string.Empty;
         }
     }
 }

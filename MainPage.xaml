@@ -27,7 +27,7 @@
             <Entry x:Name="txtNotaSeguimiento"
                    Placeholder="Nota de Seguimiento"
                    MaxLength="5"
-                   Keyboard="Numeric" Text="0">
+                   Keyboard="Numeric">
             </Entry>
 
             <Entry x:Name="txtExamen"
