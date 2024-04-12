@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sloachaminT2.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="30"
+            VerticalOptions="Center">
+
+            <DatePicker x:Name="dpFechaRegistro"/>
+
+            <Picker x:Name="pckEstudiantes"
+                    Title="Seleccionar opción">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Carlos Andino</x:String>
+                        <x:String>Jose Perez</x:String>
+                        <x:String>Santiago Loachamin</x:String>
+                        <x:String>Mario Perugachi</x:String>
+                        <x:String>Israel Sanchez</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="txtNotaSeguimiento"
+                   Placeholder="Nota de Seguimiento"
+                   MaxLength="5"
+                   Keyboard="Numeric" Text="0">
+            </Entry>
+
+            <Entry x:Name="txtExamen"
+                   Placeholder="Nota de Examen"
+                   MaxLength="5"
+                   Keyboard="Numeric">
+            </Entry>
+
+            <Entry x:Name="txtNotaSeguimiento2"
+                    Placeholder="Nota de Seguimiento 2"
+                    MaxLength="5"
+                    Keyboard="Numeric">
+            </Entry>
+
+            <Entry x:Name="txtExamen2"
+                    Placeholder="Nota de Examen 2"
+                    MaxLength="5"
+                    Keyboard="Numeric">
+            </Entry>
+
+            <Button x:Name="btnCalcular"
+                    Text="CALCULAR NOTA"
+                    Clicked="btnCalcular_Clicked"/>
+
+            <Button x:Name="btnLimpiar"
+                     Text="Limpiar"
+                     Clicked="btnLimpiar_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
