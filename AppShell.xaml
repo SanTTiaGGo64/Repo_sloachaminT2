@@ -8,7 +8,7 @@
     Title="sloachaminT2">
 
     <ShellContent
-        Title="Tarea Semana 2"
+        Title="Tarea Semana - Resultado aportes notas"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage"/>
 

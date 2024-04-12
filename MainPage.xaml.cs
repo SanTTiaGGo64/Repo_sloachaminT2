@@ -19,11 +19,15 @@ namespace sloachaminT2
                 {
                     DisplayAlert("AVISO", "Debe seleccionar un alumno.", "ok");
                 }
-                else if (txtNotaSeguimiento.Text == null || txtExamen.Text == null || txtNotaSeguimiento2.Text == null || txtExamen2.Text == null)
+                else if (txtNotaSeguimiento.Text == string.Empty || txtExamen.Text == string.Empty || txtNotaSeguimiento2.Text == string.Empty || txtExamen2.Text == string.Empty)
                 {
                     DisplayAlert("AVISO", "Un campo de notas se encuentra vacio.", "ok");
                 }
-                else if (txtNotaSeguimiento.Text.Contains('.') || txtExamen.Text.Contains(".") || txtNotaSeguimiento2.Text.Contains(".") || txtExamen2.Text.Contains("."))
+                else if (Convert.ToDecimal(txtNotaSeguimiento.Text) < 0 || Convert.ToDecimal(txtExamen.Text) < 0 || Convert.ToDecimal(txtNotaSeguimiento2.Text) < 0 || Convert.ToDecimal(txtExamen2.Text) < 0)
+                {
+                    DisplayAlert("AVISO", "Valores no pueden ser negativos.", "ok");
+                }
+                else if (txtNotaSeguimiento.Text.Contains('.') || txtExamen.Text.Contains('.') || txtNotaSeguimiento2.Text.Contains('.') || txtExamen2.Text.Contains('.'))
                 {
                     DisplayAlert("AVISO", "utilizar signo coma para decimales ➜ ','", "ok");
                 }
@@ -78,7 +82,7 @@ namespace sloachaminT2
                     {
                         strEstado = "El estudiante se encuentra APROBADO";
                     }
-                    else if (NotaFinal >= 5 && NotaFinal <= 6.9m)
+                    else if (NotaFinal >= 5 && NotaFinal <= 6.999m)
                     {
                         strEstado = "El estudiante debe tomar el EXAMEN COMPLEMENTARIO";
                     }
